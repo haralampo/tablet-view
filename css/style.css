@@ -24,6 +24,8 @@ body {
 
 nav {
     display: grid;
+    position: sticky;
+    top: 20px;
     /* "Pets", "Travel", "Recipes" */
     background-color:#dfe8fd;
     padding: 5px;
@@ -48,7 +50,7 @@ nav a {
     align-self: center;
 }
 
-nav a:hover {
+nav a:hover, nav a:focus {
     background-color: rgb(179, 255, 255);
 }
 
@@ -63,6 +65,7 @@ figure {
     padding: 10px;
     gap: 5px;
     justify-items: center;
+    margin-left: 130px;
 
 	/* Play with: */
 	/* justify-content:; */
@@ -129,7 +132,7 @@ h3 {
     margin: 10px;
 }
 
-.main, #dogname, #destination, #food {
+#dogname, #destination, #food {
     visibility: hidden;
     display: none;
 }
@@ -221,18 +224,26 @@ img:hover {
         display: contents;
     }
 
-    .main:focus-visible {
-        display: contents;
+    a[href="#skip"] {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        font-family: 'Courier';
+        color: #0F1F99;
+        background-color:#dfe8fd;
+        border: solid 2px #0F1F99;
+        transform: translateY(-100%);
+    }
+      
+    a[href="#skip"]:focus {
+        transform: translateY(0);
     }
 
     h1 {
         margin-left: 120px;
         margin-right: 10px;
         margin-top: 70px;
-    }
-
-    main {
-        margin-left: 120px;
     }
 
     ul {
